@@ -3,32 +3,32 @@
     <head>
         <meta charset="utf-8">
         <title>CalConvert</title>
-        <meta name="viewport" content="width = device-width, initial-scale = 1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body class="container">
-        <div class="card-content valign center">
-            <h4>Calculadora de Conversão <br>& Operações Numéricas</h4>
-        </div>
         <div class="card">
+            <div class="card-content valign center">
+                <h4>Calculadora de Conversão <br>& Operações Numéricas</h4>
+            </div>
             <div class="card-content">
                 <p>O objetivo desta ferramenta é propor ao aluno uma forma de acompanhar
                 a resolução de seus exercícios de conversão de bases.</p>
             </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab active"><a href="#test5">Conversão</a></li>
-                    <li class="tab"><a href="#test4">Operações</a></li>
+                    <li class="tab active"><a href="#ConversionTab">Conversão</a></li>
+                    <li class="tab"><a href="#OperationsTab">Operações</a></li>
                 </ul>
             </div>
 
 <!-- CONVERSAO -------------------------------------------------------------------------------->            
             
-            <div class="card-content grey lighten-4">
-                <div id="test5"> <!-- CONVERSAO -->
+            <div class="card-content lighten-4">
+                <div id="ConversionTab"> <!-- CONVERSAO -->
                     <div class="card-content valign center">
-                        <h5>Selecione a base de operação:</h5><br>
+                        <h5>Base da entrada:</h5><br>
                         <div class="intro-text">
                             <form action="#">
                                 <p class="center-align">
@@ -46,31 +46,68 @@
                     </div>                    
 
                     <div class="card-content valign center">
-                        <h5>Insira o Valor a ser Convertido:</h5>
-                    </div>
-
-                    <div class="row valign center">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s3">
-                                    <input id="entrada_inline" type="text" maxlength="10">
-                                    <label for="entrada_inline">Digite a Entrada</label>
+                        <h5>Valor a ser Convertido:</h5>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s4 offset-s4">
+                                        <input id="entrada_inline" type="text" maxlength="10">
+                                        <label for="entrada_inline">Digite a Entrada</label>
+                                        <i onclick="document.getElementById('entrada_inline').value = ''" title="Limpar Campo" class="waves-effect waves-light btn-flat material-icons">clear</i>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-     
+                            </form>
+                        </div>
+                        <a class="waves-effect waves-light btn">CONVERTER</a><br><br>
 
-                    <div class="card-content valign center">
-
+                        <!-- TABELA DE CONVERSAO -->
+                        
+                        <table class="striped centered">
+                            <thead>
+                                <tr>
+                                <th>Base</th>
+                                <th>Valor Convertido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BINÁRIO</td>
+                                    <td>VALOR</td>
+                                    <td>
+                                        <a class="waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>OCTAL</td>
+                                    <td>VALOR</td>
+                                    <td>
+                                        <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DECIMAL</td>
+                                    <td>VALOR</td>
+                                    <td>
+                                        <a class="waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>HEXADECIMAL</td>
+                                    <td>VALOR</td>
+                                    <td>
+                                        <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
 <!-- OPERAÇÕES -------------------------------------------------------------------------------->            
 
-                <div id="test4"> <!-- OPERAÇÕES -->
+                <div id="OperationsTab"> <!-- OPERAÇÕES -->
                     <div class="card-content valign center">
-                        <h5>Selecione a base de operação:</h5><br>
+                        <h5>Base da operação:</h5><br>
                         <div class="intro-text">
                             <form action="#">
                                 <p class="center-align">
@@ -86,52 +123,33 @@
                             </form>
                         </div> 
                     </div>
-                    
                     <div class="card-content valign center">
-                        <h5>Insira as parcelas:</h5>
-                    </div>
-                    <p>Caixa de Inserção de valores (Escolher entre dois valores ou uma expressão)</p>
-                    <br>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s3">
-                                    <input id="Valor1" type="text" class="validate" maxlength="10">
-                                    <label for="Valor1">Valor 1</label>
+                        <h5>Valores da Operação:</h5><br>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s4 offset-s1">
+                                        <input id="Valor1" type="text" class="validate" maxlength="10">
+                                        <label for="Valor1">Valor 1</label>
+                                    </div>
+                                    <div class="input-field col s4 offset-s1">
+                                        <input id="Valor2" type="text" class="validate" maxlength="10">
+                                        <label for="Valor2">Valor 2</label>
+                                    </div>
                                 </div>
-                                <div class="input-field col s3">
-                                    <input id="Valor2" type="text" class="validate" maxlength="10">
-                                    <label for="Valor2">Valor 2</label>
-                                </div>
+                            </form>
+                        </div>
+                        <div class=" valign center">
+                            <h5>Operador:</h5>
+                            <span id="multiple" class="waves-effect waves-teal btn-flat">*</span>
+                            <span id="minus" class="waves-effect waves-teal btn-flat">-</span>
+                            <span id="plus" class="waves-effect waves-teal btn-flat">+</span>
+                            <span id="divide" class="waves-effect waves-teal btn-flat">/</span>
+                        </div><br>
+                     </div>
 
-                                
-                            </div>
-                        </form>
-                    </div>
-
-                    <!--user icon in two different styles-->
-                    <i class="fas fa-user"></i>
-                    <i class="far fa-user"></i>
-                    <!--brand icon-->
-                    <i class="fab fa-github-square"></i>
-
-                    <div class="card-content valign center">
-                        <h5>Selecione o operador:</h5>
-                    </div>
-
-                    <div class="card-content valign center">
-                        <!--<a id="operator" class="waves-effect waves-teal btn-flat material-icons">add</a> -->
-                        <span id="multiple" class="waves-effect waves-teal btn-flat">*</span>
-                        <span id="minus" class="waves-effect waves-teal btn-flat">-</span>
-                        <span id="plus" class="waves-effect waves-teal btn-flat">+</span>
-                        <span id="divide" class="waves-effect waves-teal btn-flat">/</span>
-                    </div>
-
-                    <p>Botões ligados com +, -, *, / (Optar por um menu circular)</p>
-                    <p>Botão CALCULAR</p>
-
-                    <div class="card-panel valign center">
-                        <button class="waves-effect waves-light btn">CALCULAR</button></td>
+                    <div class="valign center">
+                        <button class="waves-effect waves-light btn">CALCULAR</button>
                     </div>
                     <p>Caixa com a SAÍDA</p>
                 </div>
