@@ -1,28 +1,13 @@
-<head>
-  <!--core first + styles last-->
-  <link href="/static/fontawesome/fontawesome-all.css" rel="stylesheet">
-</head>
-<body>
-  <!--user icon in two different styles-->
-  <i class="fas fa-user"></i>
-  <i class="far fa-user"></i>
-  <!--brand icon-->
-  <i class="fab fa-github-square"></i>
-</body>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title>CalConvert</title>
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-        <link href="/static/fontawesome/fontawesome-all.css" rel="stylesheet">
-        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel = "stylesheet"  href = "css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
-    <body class = "container">
+    <body class="container">
         <div class="card-content valign center">
             <h4>Calculadora de Conversão <br>& Operações Numéricas</h4>
         </div>
@@ -37,45 +22,89 @@
                     <li class="tab"><a href="#test4">Operações</a></li>
                 </ul>
             </div>
+
+<!-- CONVERSAO -------------------------------------------------------------------------------->            
+            
             <div class="card-content grey lighten-4">
                 <div id="test5"> <!-- CONVERSAO -->
                     <div class="card-content valign center">
-                        <h5>Selecione a base de operação:</h5>
+                        <h5>Selecione a base de operação:</h5><br>
+                        <div class="intro-text">
+                            <form action="#">
+                                <p class="center-align">
+                                    <input type="radio" name="base" id="OPBase1"/>
+                                    <label for="OPBase1">Binário</label>
+                                    <input type="radio" name="base" id="OPBase2"/>
+                                    <label for="OPBase2">Octal</label>
+                                    <input type="radio" name="base" id="OPBase3"/>
+                                    <label for="OPBase3">Decimal</label>
+                                    <input type="radio" name="base" id="OPBase4"/>
+                                    <label for="OPBase4">Hexadecimal</label>
+                                </p>
+                            </form>
+                        </div>
+                    </div>                    
+
+                    <div class="card-content valign center">
+                        <h5>Insira o Valor a ser Convertido:</h5>
                     </div>
 
-                    <br>
-                    <div class="intro-text">
-                        <form action="#">
-                            <p class="center-align">
-                                <input type="radio" name="base" id="base1"/>
-                                <label for="base1">Binário</label>
-                                <input type="radio" name="base" id="base2"/>
-                                <label for="base2">Octal</label>
-                                <input type="radio" name="base" id="base3"/>
-                                <label for="base3">Decimal</label>
-                                <input type="radio" name="base" id="base4"/>
-                                <label for="base4">Hexadecimal</label>
-                            </p>
-                      </form>
+                    <div class="row valign center">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input id="entrada_inline" type="text" maxlength="10">
+                                    <label for="entrada_inline">Digite a Entrada</label>
+                                </div>
+                            </div>
+                        </form>
                     </div>
+     
 
-                    <br>
+                    <div class="card-content valign center">
 
+                    </div>
+                </div>
+
+<!-- OPERAÇÕES -------------------------------------------------------------------------------->            
+
+                <div id="test4"> <!-- OPERAÇÕES -->
+                    <div class="card-content valign center">
+                        <h5>Selecione a base de operação:</h5><br>
+                        <div class="intro-text">
+                            <form action="#">
+                                <p class="center-align">
+                                    <input type="radio" name="base" id="CVBase1"/>
+                                    <label for="CVBase1">Binário</label>
+                                    <input type="radio" name="base" id="CVBase2"/>
+                                    <label for="CVBase2">Octal</label>
+                                    <input type="radio" name="base" id="CVBase3"/>
+                                    <label for="CVBase3">Decimal</label>
+                                    <input type="radio" name="base" id="CVBase4"/>
+                                    <label for="CVBase4">Hexadecimal</label>
+                                </p>
+                            </form>
+                        </div> 
+                    </div>
+                    
                     <div class="card-content valign center">
                         <h5>Insira as parcelas:</h5>
                     </div>
                     <p>Caixa de Inserção de valores (Escolher entre dois valores ou uma expressão)</p>
-
+                    <br>
                     <div class="row">
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s3">
-                                    <input placeholder="Valor 1" id="Valor1" type="text" class="validate"
-                                    maxlength="10">
+                                    <input id="Valor1" type="text" class="validate" maxlength="10">
+                                    <label for="Valor1">Valor 1</label>
                                 </div>
                                 <div class="input-field col s3">
-                                    <input placeholder="Valor 2" id="Valor2" type="text" class="validate" maxlength="10">
+                                    <input id="Valor2" type="text" class="validate" maxlength="10">
+                                    <label for="Valor2">Valor 2</label>
                                 </div>
+
+                                
                             </div>
                         </form>
                     </div>
@@ -105,10 +134,6 @@
                         <button class="waves-effect waves-light btn">CALCULAR</button></td>
                     </div>
                     <p>Caixa com a SAÍDA</p>
-                </div>
-
-                <div id="test4"> <!-- OPERAÇÕES -->
-                    <div>Operações</div>
                 </div>
             </div>
         </div>
