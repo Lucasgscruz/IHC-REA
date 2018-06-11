@@ -1,0 +1,20 @@
+.place-image {
+    width:326px;
+    height:326px;  
+}
+
+img {
+  opacity: 0;
+  transition: opacity .4s ease;
+  /*TODO: add crossbrowser prefixes*/
+}
+
+li:hover img{
+  opacity: 1;
+}
+.center{
+text-align:center}
+
+.tamanho{
+	size: 10px;
+}

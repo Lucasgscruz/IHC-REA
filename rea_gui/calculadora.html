@@ -3,9 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>CalConvert</title>
+        <script type = "text/javascript" src = "js/jquery.min.js"></script>
+        <script src = "js/materialize.min.js"></script>
+        <script src = "js/extra.js"></script>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" href="css/my.css">
+        <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body class="container">
@@ -61,7 +65,30 @@
                         </div>
                         <a class="waves-effect waves-light btn">CONVERTER</a><br><br>
                         
-                        <img id="menucircle" width="50" height="50" alt="menu circle" src="images/circle.jpg"/>
+                        <img src="images/DecToBin.png">
+
+                        <!-- Estrutura Modal -->
+                        <div id="modalBIN" class="modal">
+                            <div class="modal-content">
+                                <h4>Conversão para Binário</h4>
+                                <img src="/images/DecToBin.png">
+                            </div>
+
+                            <div class="modal-footer">
+                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">FECHAR</a>
+                            </div>
+                        </div>
+
+                        <div id="modalDEC" class="modal">
+                            <div class="modal-content">
+                                <h4>Conversão para Decimal</h4>
+                                <img src="file:///C:/Users/Valney%20Faria/Desktop/IHC-REA/rea_gui/images/DecToBin.png">
+                            </div>
+
+                            <div class="modal-footer">
+                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">FECHAR</a>
+                            </div>
+                        </div>
 
                         <!-- TABELA DE CONVERSAO -->
                         
@@ -77,7 +104,7 @@
                                     <td>BINÁRIO</td>
                                     <td>VALOR</td>
                                     <td>
-                                        <a class="waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                        <a class="waves-effect waves-light btn modal-trigger" href="#modalBIN">PASSO-A-PASSO</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -91,7 +118,7 @@
                                     <td>DECIMAL</td>
                                     <td>VALOR</td>
                                     <td>
-                                        <a class="waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                        <a class="waves-effect waves-light btn modal-trigger" href="#modalDEC">PASSO-A-PASSO</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -166,13 +193,9 @@
         </div>
 
         <script type="text/javascript">
-            var instance = M.Tabs.init(el, options);
-            $(document).ready(function(){
-                $('.tabs').tabs();
-            });
-
         </script>
-        <script type = "text/javascript" src = "js/jquery.min.js"></script>
-        <script src = "js/materialize.min.js"></script>
+     
+
+
     </body>
 </html>
