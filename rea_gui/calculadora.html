@@ -1,204 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <title>CalConvert</title>
-        <script type = "text/javascript" src = "js/jquery.min.js"></script>
-        <script src = "js/materialize.min.js"></script>
-        <script src = "js/extra.js"></script>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/my.css">
-        <link rel="stylesheet" href="css/materialize.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    </head>
-    <body class="container">
-        <div class="card">
-            <div class="card-content valign center">
-                <h4>Calculadora de Conversão <br>& Operações Numéricas</h4>
-            </div>
-            <div class="card-content">
-                <p>O objetivo desta ferramenta é propor ao aluno uma forma de acompanhar
-                a resolução de seus exercícios de conversão de bases.</p>
-            </div>
-            <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab active"><a href="#ConversionTab">Conversão</a></li>
-                    <li class="tab"><a href="#OperationsTab">Operações</a></li>
-                </ul>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>CalConvert</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/extra.js"></script>
 
-<!-- CONVERSAO -------------------------------------------------------------------------------->            
-            
-            <div class="card-content lighten-4">
-                <div id="ConversionTab"> <!-- CONVERSAO -->
-                    <div class="card-content valign center">
-                        <h5>Base da entrada:</h5><br>
-                        <div class="intro-text">
-                            <form action="#">
-                                <p class="center-align">
-                                    <input type="radio" name="base" id="OPBase1"/>
-                                    <label for="OPBase1">Binário</label>
-                                    <input type="radio" name="base" id="OPBase2"/>
-                                    <label for="OPBase2">Octal</label>
-                                    <input type="radio" name="base" id="OPBase3"/>
-                                    <label for="OPBase3">Decimal</label>
-                                    <input type="radio" name="base" id="OPBase4"/>
-                                    <label for="OPBase4">Hexadecimal</label>
-                                </p>
-                            </form>
-                        </div>
-                    </div>                    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 
-                    <div class="card-content valign center">
-                        <h5>Valor a ser Convertido:</h5>
-                        <div class="row">
-                            <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s4 offset-s4">
-                                        <input id="entrada_inline" type="text" maxlength="10">
-                                        <label for="entrada_inline">Digite a Entrada</label>
-                                        <i onclick="document.getElementById('entrada_inline').value = ''" title="Limpar Campo" class="waves-effect waves-light btn-flat material-icons">clear</i>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <a class="waves-effect waves-light btn">CONVERTER</a><br><br>
-                        
-                        <!-- Estrutura Modal -->
-                        <div id="modalBIN" class="modal">
-                            <div class="modal-content">
-                                <div class="card-content valign center">
-                                    <h4>Conversão para Binário</h4>
-                                    <img src="images/DecToBin.png">
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">FECHAR</a>
-                            </div>
-                        </div>
-
-                        <div id="modalDEC" class="modal">
-                            <div class="modal-content">
-                                <div class="card-content valign center">
-                                    <h4>Conversão para Decimal</h4>
-                                    <img src="images/DecToBin.png">
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">FECHAR</a>
-                            </div>
-                        </div>
-
-                        <!-- TABELA DE CONVERSAO -->
-                        
-                        <table class="striped centered">
-                            <thead>
-                                <tr>
-                                <th>Base</th>
-                                <th>Valor Convertido</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>BINÁRIO</td>
-                                    <td>VALOR</td>
-                                    <td>
-                                        <a class="waves-effect waves-light btn modal-trigger" href="#modalBIN">PASSO-A-PASSO</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>OCTAL</td>
-                                    <td>VALOR</td>
-                                    <td>
-                                        <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>DECIMAL</td>
-                                    <td>VALOR</td>
-                                    <td>
-                                        <a class="waves-effect waves-light btn modal-trigger" href="#modalDEC">PASSO-A-PASSO</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>HEXADECIMAL</td>
-                                    <td>VALOR</td>
-                                    <td>
-                                        <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-<!-- OPERAÇÕES -------------------------------------------------------------------------------->            
-
-                <div id="OperationsTab"> <!-- OPERAÇÕES -->
-                    <div class="card-content valign center">
-                        <h5>Base da operação:</h5><br>
-                        <div class="intro-text">
-                            <form action="#">
-                                <p class="center-align">
-                                    <input type="radio" name="base" id="CVBase1"/>
-                                    <label for="CVBase1">Binário</label>
-                                    <input type="radio" name="base" id="CVBase2"/>
-                                    <label for="CVBase2">Octal</label>
-                                    <input type="radio" name="base" id="CVBase3"/>
-                                    <label for="CVBase3">Decimal</label>
-                                    <input type="radio" name="base" id="CVBase4"/>
-                                    <label for="CVBase4">Hexadecimal</label>
-                                </p>
-                            </form>
-                        </div> 
-                    </div>
-                    <div class="card-content valign center">
-                        <h5>Valores da Operação:</h5><br>
-                        <div class="row">
-                            <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s3 offset-s3">
-                                        <input id="Valor1" type="text" class="validate" maxlength="10">
-                                        <label for="Valor1">Valor 1</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input id="Valor2" type="text" class="validate" maxlength="10">
-                                        <label for="Valor2">Valor 2</label>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class=" valign center">
-                            <h5>Operador:</h5>
-                            <span id="multiple" class="waves-effect waves-teal btn-flat">*</span>
-                            <span id="minus" class="waves-effect waves-teal btn-flat">-</span>
-                            <span id="plus" class="waves-effect waves-teal btn-flat">+</span>
-                            <span id="divide" class="waves-effect waves-teal btn-flat">/</span>
-                        </div><br>
-                     </div>
-
-                    <div class="valign center">
-                        <button class="waves-effect waves-light btn">CALCULAR</button>
-                    </div>
-                    <p>Caixa com a SAÍDA</p>
-                </div>
-            </div>
-
-            <footer>
-                <div class="container center-align">
-                    © 2018 <a href="https://www.facebook.com/jmoszx">João Marcos Oliveira</a>, <a href="https://www.facebook.com/lucasgscruz">Lucas Silva</a> & <a href="https://www.facebook.com/valney.faria">Valney Faria</a><br><br>
-                </div>
-            </footer>
+<body class="container">
+    <div class="card">
+        <div class="card-content valign center">
+            <h4>Calculadora de Conversão
+                <br>& Operações Numéricas</h4>
+        </div>
+        <div class="card-content">
+            <p>O objetivo desta ferramenta é propor ao aluno uma forma de acompanhar a resolução de seus exercícios de conversão
+                de bases.</p>
+        </div>
+        <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+                <li class="tab active">
+                    <a href="#ConversionTab">Conversão</a>
+                </li>
+                <li class="tab">
+                    <a href="#OperationsTab">Operações</a>
+                </li>
+            </ul>
         </div>
 
-        <script type="text/javascript">
-        </script>
-     
+        <!-- CONVERSAO -------------------------------------------------------------------------------->
+
+        <div class="card-content lighten-4">
+            <div id="ConversionTab">
+                <!-- CONVERSAO -->
+                <div class="card-content valign center">
+                    <h5>Base da entrada:</h5>
+                    <br>
+                    <div class="intro-text">
+                        <form action="#">
+                            <p class="center-align">
+                                <input type="radio" name="base" id="OPBase1" />
+                                <label for="OPBase1">Binário</label>
+                                <input type="radio" name="base" id="OPBase2" />
+                                <label for="OPBase2">Octal</label>
+                                <input type="radio" name="base" id="OPBase3" />
+                                <label for="OPBase3">Decimal</label>
+                                <input type="radio" name="base" id="OPBase4" />
+                                <label for="OPBase4">Hexadecimal</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card-content valign center">
+                    <h5>Valor a ser Convertido:</h5>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s4 offset-s4">
+                                    <input id="entrada_inline" type="text" maxlength="10">
+                                    <label for="entrada_inline">Digite a Entrada</label>
+                                    <i onclick="document.getElementById('entrada_inline').value = ''" title="Limpar Campo" class="waves-effect waves-light btn-flat material-icons">clear</i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <a class="waves-effect waves-light btn">CONVERTER</a>
+                    <br>
+                    <br>
+
+                    <!-- Estrutura Modal -->
+                    <div id="modalBIN" class="modal">
+                        <div class="modal-content">
+                            <div class="card-content valign center">
+                                <h4>Conversão para Binário</h4>
+                                <img src="images/DecToBin.png">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">FECHAR</a>
+                        </div>
+                    </div>
+
+                    <div id="modalDEC" class="modal">
+                        <div class="modal-content">
+                            <div class="card-content valign center">
+                                <h4>Conversão para Decimal</h4>
+                                <img src="images/DecToBin.png">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">FECHAR</a>
+                        </div>
+                    </div>
+
+                    <!-- TABELA DE CONVERSAO -->
+
+                    <table class="striped centered">
+                        <thead>
+                            <tr>
+                                <th>Base</th>
+                                <th>Valor Convertido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BINÁRIO</td>
+                                <td>VALOR</td>
+                                <td>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modalBIN">PASSO-A-PASSO</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OCTAL</td>
+                                <td>VALOR</td>
+                                <td>
+                                    <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DECIMAL</td>
+                                <td>VALOR</td>
+                                <td>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modalDEC">PASSO-A-PASSO</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HEXADECIMAL</td>
+                                <td>VALOR</td>
+                                <td>
+                                    <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- OPERAÇÕES -------------------------------------------------------------------------------->
+
+            <div id="OperationsTab">
+                <!-- OPERAÇÕES -->
+                <div class="card-content valign center">
+                    <h5>Base da operação:</h5>
+                    <br>
+                    <div class="intro-text">
+                        <form action="#">
+                            <p class="center-align">
+                                <input type="radio" name="base" id="CVBase1" />
+                                <label for="CVBase1">Binário</label>
+                                <input type="radio" name="base" id="CVBase2" />
+                                <label for="CVBase2">Octal</label>
+                                <input type="radio" name="base" id="CVBase3" />
+                                <label for="CVBase3">Decimal</label>
+                                <input type="radio" name="base" id="CVBase4" />
+                                <label for="CVBase4">Hexadecimal</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-content valign center">
+                    <h5>Valores da Operação:</h5>
+                    <br>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s3 offset-s3">
+                                    <input id="Valor1" type="text" class="validate" maxlength="10">
+                                    <label for="Valor1">Valor 1</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="Valor2" type="text" class="validate" maxlength="10">
+                                    <label for="Valor2">Valor 2</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class=" valign center">
+                        <h5>Operador:</h5>
+                        <span id="multiple" class="waves-effect waves-teal btn-flat">*</span>
+                        <span id="minus" class="waves-effect waves-teal btn-flat">-</span>
+                        <span id="plus" class="waves-effect waves-teal btn-flat">+</span>
+                        <span id="divide" class="waves-effect waves-teal btn-flat">/</span>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="valign center">
+                    <button class="waves-effect waves-light btn">CALCULAR</button>
+                </div>
+                <p>Caixa com a SAÍDA</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container center-align">
+                © 2018
+                <a href="https://www.facebook.com/jmoszx">João Marcos Oliveira</a>,
+                <a href="https://www.facebook.com/lucasgscruz">Lucas Silva</a> &
+                <a href="https://www.facebook.com/valney.faria">Valney Faria</a>
+                <br>
+                <br>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+    </script>
 
 
-    </body>
+
+</body>
+
 </html>
