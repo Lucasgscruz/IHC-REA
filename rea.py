@@ -3,7 +3,10 @@
 import eel
 
 eel.init('rea_gui')
-eel.start('calculadora.html', options = {'port': 9012})
+hexa = ['0','1','2','3','4', '5','6','7','8','9','a','b','c','d','e','f']
+decimal = ['0','1','2','3','4','5','6','7','8','9']
+octal = ['0','1','2','3','4','5','6','7']
+binario = ['0','1']
 
 # def calcular(numero1, numero2, operacao):
 #     if operacao == '+':
@@ -17,17 +20,37 @@ eel.start('calculadora.html', options = {'port': 9012})
 #
 #     return resultado
 #
-# @eel.expose
-# def verificaBase(base, numero):
-#     """Verifica se os numeros pertcencem a base de origem"""
-#     for i in numero:
-#         if int(i) >= int(base):
-#             return False
-#     return True
-
 @eel.expose
-def teste():
-    print "Entrou no python"
+def verificaSimbolos(base, numero):
+    """Verifica se os numeros pertcencem a base de origem"""
+    base = str(base)
+    numero = str(numero)
+
+    print base, numero
+
+    if base == '2':
+        for i in numero:
+            if i not in binario:
+                eel.autenticaSimbolos(False)
+                return None
+    elif base == '8':
+        for i in numero:
+            if i not in octal:
+                eel.autenticaSimbolos(False)
+                return None
+    elif base == '10':
+        for i in numero:
+            if i not in decimal:
+                eel.autenticaSimbolos(False)
+                return None
+    elif base == '16':
+        for i in numero:
+            if i not in hexa:
+                eel.autenticaSimbolos(False)
+                return None
+
+    print "Valido!"
+    eel.autenticaSimbolos(True)
 
 # @eel.expose
 # def coverteBase(baseOrigem, numero):
@@ -67,3 +90,4 @@ def teste():
 #         numero2 += aux2
 #
 #     return calcular(numero1, numero2, operacao)
+eel.start('calculadora.html', options = {'port': 9013})

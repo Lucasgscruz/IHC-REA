@@ -2,17 +2,17 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
     <title>CalConvert</title>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/extra.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/my.css">
     <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/my.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <body class="container">
@@ -120,28 +120,28 @@
                         <tbody>
                             <tr>
                                 <td>BINÁRIO</td>
-                                <td>VALOR</td>
+                                <td><p id="celula_binario">VALOR</p></td>
                                 <td>
                                     <a class="waves-effect waves-light btn modal-trigger" href="#modalBIN">PASSO-A-PASSO</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>OCTAL</td>
-                                <td>VALOR</td>
+                                <td id="celula_octal">VALOR</td>
                                 <td>
                                     <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>DECIMAL</td>
-                                <td>VALOR</td>
+                                <td id="celula_decimal">VALOR</td>
                                 <td>
                                     <a class="waves-effect waves-light btn modal-trigger" href="#modalDEC">PASSO-A-PASSO</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>HEXADECIMAL</td>
-                                <td>VALOR</td>
+                                <td id="celula_hexa">VALOR</td>
                                 <td>
                                     <a class="disabled waves-effect waves-light btn">PASSO-A-PASSO</a>
                                 </td>
@@ -242,43 +242,47 @@
         </footer>
     </div>
     <script type="text/javascript">
+    var numero;
     function verificaNumero(){
         numero = document.getElementById("entrada_inline");
         if (numero.value != '') {
-            alert("antes do python")
-            eel.teste();
-            alert("deeepois do python")
             verificaBase();
         }
         else
             alert("Número não digitado!");
+            return;
     }
     function verificaBase(){
-        base = document.getElementById("OPBase1");
+        if(document.getElementById("OPBase1").checked){
+        //    $("#celula_binario").html("");
+            eel.verificaSimbolos('2', numero.value);
+        }
+        else if (document.getElementById("OPBase2").checked){
+            eel.verificaSimbolos('8', numero.value);
 
-        if(base.checked){
-            alert("binario");
         }
-        else if (base = document.getElementById("OPBase2").checked) {
-            alert("octal");
+        else if (document.getElementById("OPBase3").checked){
+            eel.verificaSimbolos('10', numero.value);
         }
-        else if (base = document.getElementById("OPBase3").checked) {
-            alert("decimal");
-        }
-        else if (base = document.getElementById("OPBase4").checked) {
-            alert("hexadecimal");
+        else if (document.getElementById("OPBase4").checked){
+            eel.verificaSimbolos('16', numero.value);
         }
         else {
-            alert("Selecione uma base de entrada!")
+            alert("Selecione uma base de entrada!");
         }
     }
 
+    eel.expose(autenticaSimbolos);
+    function autenticaSimbolos(isValido){
+        if(isValido) alert(isValido);
+        else alert("Algum símbolo não pertence a base escolhida!");
+    }
 
+    eel.expose(mudaTabela);
+    function mudaTabela(baseDestino, numero) {
 
+    }
 
-    // if( $("#OPBase1").is(":checked") == true){
-    //     alert("aaaaee");
-    // }
     </script>
 </body>
 
