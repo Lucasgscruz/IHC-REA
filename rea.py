@@ -6,11 +6,11 @@ eel.init('rea_gui')
 def calcular(numero1, numero2, operacao):
     if operacao == '+':
         resultado = numero1+numero2
-    else if operacao == '-':
+    elif operacao == '-':
         resultado = numero1-numero2
-    else if operacao == '*':
+    elif operacao == '*':
         resultado = numero1*numero2
-    else if operacao == '/':
+    elif operacao == '/':
         resultado = numero1/numero2
 
     return resultado
@@ -48,13 +48,13 @@ def calcula(baseOrigem, numero1, numero2, operacao):
         numero1 += aux1
         numero2 += aux2
 
-    else if baseOrigem == '8':
+    elif baseOrigem == '8':
         numero1 += '0'
         numero2 += '0'
         numero1 += aux1
         numero2 += aux2
 
-    else if baseOrigem == '16':
+    elif baseOrigem == '16':
         numero1 += '0x'
         numero2 += '0x'
         numero1 += aux1

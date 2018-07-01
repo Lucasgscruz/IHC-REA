@@ -73,7 +73,8 @@
                         </form>
                     </div>
 
-                    <a class="waves-effect waves-light btn">CONVERTER</a>
+                    <button class="waves-effect waves-light btn" onclick="verificaNumero()"/>CONVERTER</button>
+
                     <br>
                     <br>
 
@@ -239,6 +240,42 @@
             </div>
         </footer>
     </div>
+    <script type="text/javascript">
+    function verificaNumero(){
+        numero = document.getElementById("entrada_inline");
+        if (numero.value != '') {
+            verificaBase();
+        }
+        else
+            alert("Número não digitado!");
+    }
+    function verificaBase(){
+        base = document.getElementById("OPBase1");
+
+        if(base.checked){
+            alert("binario");
+        }
+        else if (base = document.getElementById("OPBase2").checked) {
+            alert("octal");
+        }
+        else if (base = document.getElementById("OPBase3").checked) {
+            alert("decimal");
+        }
+        else if (base = document.getElementById("OPBase4").checked) {
+            alert("hexadecimal");
+        }
+        else {
+            alert("Selecione uma base de entrada!")
+        }
+    }
+
+
+
+
+    // if( $("#OPBase1").is(":checked") == true){
+    //     alert("aaaaee");
+    // }
+    </script>
 </body>
 
 </html>
