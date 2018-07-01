@@ -1,4 +1,4 @@
-a = 0b1010
-b = 0b10
+a = 0b10110
+b = 0b1010
 
-print int(bin(a*b),2)
+print hex(b)
