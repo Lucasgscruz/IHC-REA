@@ -254,7 +254,6 @@
     }
     function verificaBase(){
         if(document.getElementById("OPBase1").checked){
-        //    $("#celula_binario").html("");
             eel.verificaSimbolos('2', numero.value);
         }
         else if (document.getElementById("OPBase2").checked){
@@ -273,14 +272,21 @@
     }
 
     eel.expose(autenticaSimbolos);
-    function autenticaSimbolos(isValido){
-        if(isValido) alert(isValido);
+    function autenticaSimbolos(isValido, base, numero){
+        if(isValido){
+            //alert(isValido);
+            eel.coverteBase(base, numero);
+        }
         else alert("Algum símbolo não pertence a base escolhida!");
     }
 
     eel.expose(mudaTabela);
-    function mudaTabela(baseDestino, numero) {
-
+    function mudaTabela(lista) {
+        //alert(lista);
+        $("#celula_binario").html(lista[0]);
+        $("#celula_octal").html(lista[1]);
+        $("#celula_decimal").html(lista[2]);
+        $("#celula_hexa").html(lista[3]);
     }
 
     </script>

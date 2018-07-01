@@ -3,10 +3,10 @@
 import eel
 
 eel.init('rea_gui')
-hexa = ['0','1','2','3','4', '5','6','7','8','9','a','b','c','d','e','f']
-decimal = ['0','1','2','3','4','5','6','7','8','9']
-octal = ['0','1','2','3','4','5','6','7']
-binario = ['0','1']
+hexa = ['-','0','1','2','3','4', '5','6','7','8','9','A','B','C','D','E','F','a','b','c','d','e','f']
+decimal = ['-','0','1','2','3','4','5','6','7','8','9']
+octal = ['-','0','1','2','3','4','5','6','7']
+binario = ['-','0','1']
 
 # def calcular(numero1, numero2, operacao):
 #     if operacao == '+':
@@ -25,9 +25,15 @@ def verificaSimbolos(base, numero):
     """Verifica se os numeros pertcencem a base de origem"""
     base = str(base)
     numero = str(numero)
+    cont = 0
 
     print base, numero
 
+    while (cont < len(numero)):
+        if(numero[cont] == '-' and cont > 0):
+            eel.autenticaSimbolos(False)
+            return None
+        cont += 1
     if base == '2':
         for i in numero:
             if i not in binario:
@@ -50,19 +56,30 @@ def verificaSimbolos(base, numero):
                 return None
 
     print "Valido!"
-    eel.autenticaSimbolos(True)
+    eel.autenticaSimbolos(True, base, numero)
 
-# @eel.expose
-# def coverteBase(baseOrigem, numero):
-#     """Realiza conversao entre as bases numéricas"""
-#     conversao = []
-#     numeroDecimal = int(numero, baseOrigem)
-#     conversao.append(bin(numeroDecimal)[2:])
-#     conversao.append(oct(numeroDecimal)[1:])
-#     conversao.append(int(numeroDecimal))
-#     conversao.append(hex(numeroDecimal)[2:])
-#     return conversao
-#
+@eel.expose
+def coverteBase(baseOrigem, numero):
+    """Realiza conversao entre as bases numéricas"""
+    baseOrigem = int(baseOrigem)
+    numero = str(numero)
+
+    conversao = []
+    if(numero[0] != '-'):
+        numeroDecimal = int(numero, baseOrigem)
+        conversao.append(bin(numeroDecimal)[2:])
+        conversao.append(oct(numeroDecimal)[1:])
+        conversao.append(str(numeroDecimal))
+        conversao.append(hex(numeroDecimal)[2:].upper())
+        eel.mudaTabela(conversao)
+    else:
+        numeroDecimal = int(numero, baseOrigem)
+        conversao.append('-' + bin(numeroDecimal)[3:])
+        conversao.append('-' + oct(numeroDecimal)[2:])
+        conversao.append('-' + str(numeroDecimal))
+        conversao.append('-' + hex(numeroDecimal)[3:].upper())
+        eel.mudaTabela(conversao)
+
 # @eel.expose
 # def calcula(baseOrigem, numero1, numero2, operacao):
 #     """Realiza operação entre dois numeros"""
@@ -90,4 +107,4 @@ def verificaSimbolos(base, numero):
 #         numero2 += aux2
 #
 #     return calcular(numero1, numero2, operacao)
-eel.start('calculadora.html', options = {'port': 9013})
+eel.start('calculadora.html', options = {'port': 9014})
