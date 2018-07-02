@@ -302,7 +302,8 @@
         var base, operacao;
         if (numero1.value != '' && numero2.value != '') {
             base = verificaBase2();
-            alert(base);
+            operacao = verificaOperacao();
+            alert(operacao+base);
 
         }
         else
@@ -314,7 +315,20 @@
         else if(document.getElementById("CVBase2").checked) return '8';
         else if(document.getElementById("CVBase3").checked) return '10';
         else if(document.getElementById("CVBase4").checked) return '16';
-        else return false;
+        else{
+            alert("A base de operação não foi escolhida!")
+            return false;
+        }
+    }
+    function verificaOperacao() {
+        if(document.getElementById("multiple").checked) return '*';
+        else if(document.getElementById("divide").checked) return '/';
+        else if(document.getElementById("plus").checked) return '+';
+        else if(document.getElementById("minus").checked) return '-';
+        else{
+            alert("O tipo de operação não foi selecionado!")
+            return false;
+        }
     }
 
     </script>
