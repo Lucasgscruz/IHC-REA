@@ -303,8 +303,10 @@
         if (numero1.value != '' && numero2.value != '') {
             base = verificaBase2();
             operacao = verificaOperacao();
-            alert(operacao+base);
 
+            if(base && operacao){
+                eel.verificaSimbolos2(numero1.value, numero2.value,base,operacao);
+            }
         }
         else
             alert("Número não digitado!");
@@ -329,6 +331,14 @@
             alert("O tipo de operação não foi selecionado!")
             return false;
         }
+    }
+
+    eel.expose(realizaOperacao);
+    function realizaOperacao(isValido, numero1, numero2,base,operacao){
+        if(isValido){
+            alert("simbolos validos");
+        }
+        else alert("Algum símbolo não pertence a base escolhida!");
     }
 
     </script>

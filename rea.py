@@ -21,6 +21,64 @@ binario = ['-','0','1']
 #     return resultado
 #
 @eel.expose
+def verificaSimbolos2(numero1, numero2, base, operacao):
+    """Verifica se os numeros pertcencem a base de origem"""
+    numero1 = str(numero1)
+    numero2 = str(numero2)
+    base = str(base)
+    operacao = str(operacao)
+    cont = 0
+
+    print base, numero1, numero2
+
+    while (cont < len(numero1)):
+        if((numero1[cont] == '-' or numero2[cont] == '-')and cont > 0):
+            eel.realizaOperacao(False)
+            return None
+        cont += 1
+
+    if base == '2':
+        for i in numero1:
+            if i not in binario:
+                eel.realizaOperacao(False)
+                return None
+        for i in numero2:
+            if i not in binario:
+                eel.realizaOperacao(False)
+                return None
+    elif base == '8':
+        for i in numero1:
+            if i not in octal:
+                eel.realizaOperacao(False)
+                return None
+        for i in numero2:
+            if i not in octal:
+                eel.realizaOperacao(False)
+                return None
+    elif base == '10':
+        for i in numero1:
+            if i not in decimal:
+                eel.realizaOperacao(False)
+                return None
+        for i in numero2:
+            if i not in decimal:
+                eel.realizaOperacao(False)
+                return None
+    elif base == '16':
+        for i in numero1:
+            if i not in hexa:
+                eel.realizaOperacao(False)
+                return None
+        for i in numero2:
+            if i not in hexa:
+                eel.realizaOperacao(False)
+                return None
+
+    print "Valido!"
+    eel.realizaOperacao(True,numero1,numero2,base,operacao)
+
+
+@eel.expose
 def verificaSimbolos(base, numero):
     """Verifica se os numeros pertcencem a base de origem"""
     base = str(base)
