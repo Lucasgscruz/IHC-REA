@@ -226,11 +226,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>BINÁRIO</td>
-                                <td>101</td>
-                                <td>+</td>
-                                <td>01</td>
-                                <td>110</td>
+                                <td id="base_tabela"></td>
+                                <td id="n1_tabela"></td>
+                                <td id="op_tabela"></td>
+                                <td id="n2_tabela"></td>
+                                <td id="result_tabela"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -337,22 +337,24 @@
     function realizaOperacao(isValido, numero1, numero2,base,operacao){
         if(isValido){
             var resultado;
-            if(operacao == '+'){
+            if(operacao == '+')
                 resultado = parseInt(numero1,base) + parseInt(numero2,base);
-                alert(resultado.toString(base));
-            }
-            else if(operacao == '-'){
+            else if(operacao == '-')
                 resultado = parseInt(numero1,base) - parseInt(numero2,base);
-                alert(resultado.toString(base));
-            }
-            else if(operacao == '*'){
+            else if(operacao == '*')
                 resultado = parseInt(numero1,base) * parseInt(numero2,base);
-                alert(resultado.toString(base));
-            }
-            else if(operacao == '/'){
+            else if(operacao == '/')
                 resultado = parseInt(numero1,base) / parseInt(numero2,base);
-                alert(resultado.toString(base));
-            }
+
+            if(base == '2') $("#base_tabela").html("BINARIO");
+            else if(base == '8') $("#base_tabela").html("OCTAL");
+            else if(base == '10') $("#base_tabela").html("DECIMAL");
+            else if(base == '16') $("#base_tabela").html("HEXADECIMAL");
+
+            $("#n1_tabela").html(numero1);
+            $("#op_tabela").html(operacao);
+            $("#n2_tabela").html(numero2);
+            $("#result_tabela").html(resultado.toString(base));
         }
         else alert("Algum símbolo não pertence a base escolhida!");
     }
