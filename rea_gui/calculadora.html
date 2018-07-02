@@ -192,10 +192,17 @@
                     </div>
                     <div class=" valign center">
                         <h5>Operador:</h5>
-                        <span id="multiple" class="waves-effect waves-teal btn-flat">*</span>
-                        <span id="minus" class="waves-effect waves-teal btn-flat">-</span>
-                        <span id="plus" class="waves-effect waves-teal btn-flat">+</span>
-                        <span id="divide" class="waves-effect waves-teal btn-flat">/</span>
+                        <input id="multiple" type="radio" name="operacao">
+                        <label for="multiple">*</label>
+
+                        <input id="minus" type="radio" name="operacao">
+                        <label for="minus">-</label>
+
+                        <input id="plus" type="radio" name="operacao">
+                        <label for="plus">+</label>
+
+                        <input id="divide" type="radio" name="operacao" >
+                        <label for="divide">/</label>
                     </div>
                     <br>
                 </div>
@@ -292,8 +299,11 @@
     function verificaParcelas(){
         numero1 = document.getElementById("Valor1");
         numero2 = document.getElementById("Valor2");
+        var base, operacao;
         if (numero1.value != '' && numero2.value != '') {
-            alert(verificaBase2());
+            base = verificaBase2();
+            alert(base);
+
         }
         else
             alert("Número não digitado!");
