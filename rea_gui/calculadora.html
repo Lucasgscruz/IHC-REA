@@ -336,7 +336,23 @@
     eel.expose(realizaOperacao);
     function realizaOperacao(isValido, numero1, numero2,base,operacao){
         if(isValido){
-            alert("simbolos validos");
+            var resultado;
+            if(operacao == '+'){
+                resultado = parseInt(numero1,base) + parseInt(numero2,base);
+                alert(resultado.toString(base));
+            }
+            else if(operacao == '-'){
+                resultado = parseInt(numero1,base) - parseInt(numero2,base);
+                alert(resultado.toString(base));
+            }
+            else if(operacao == '*'){
+                resultado = parseInt(numero1,base) * parseInt(numero2,base);
+                alert(resultado.toString(base));
+            }
+            else if(operacao == '/'){
+                resultado = parseInt(numero1,base) / parseInt(numero2,base);
+                alert(resultado.toString(base));
+            }
         }
         else alert("Algum símbolo não pertence a base escolhida!");
     }

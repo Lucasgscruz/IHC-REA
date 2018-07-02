@@ -32,7 +32,14 @@ def verificaSimbolos2(numero1, numero2, base, operacao):
     print base, numero1, numero2
 
     while (cont < len(numero1)):
-        if((numero1[cont] == '-' or numero2[cont] == '-')and cont > 0):
+        if(numero1[cont] == '-' and cont > 0):
+            eel.realizaOperacao(False)
+            return None
+        cont += 1
+    cont = 0
+
+    while (cont < len(numero2)):
+        if(numero2[cont] == '-' and cont > 0):
             eel.realizaOperacao(False)
             return None
         cont += 1
