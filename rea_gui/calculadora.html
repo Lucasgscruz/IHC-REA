@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="valign center">
-                    <button class="waves-effect waves-light btn">CALCULAR</button>
+                    <button class="waves-effect waves-light btn" onclick="verificaParcelas()">CALCULAR</button>
                     <br>
                     <br>
 
@@ -287,6 +287,24 @@
         $("#celula_octal").html(lista[1]);
         $("#celula_decimal").html(lista[2]);
         $("#celula_hexa").html(lista[3]);
+    }
+
+    function verificaParcelas(){
+        numero1 = document.getElementById("Valor1");
+        numero2 = document.getElementById("Valor2");
+        if (numero1.value != '' && numero2.value != '') {
+            alert(verificaBase2());
+        }
+        else
+            alert("Número não digitado!");
+            return;
+    }
+    function verificaBase2(){
+        if(document.getElementById("CVBase1").checked) return '2';
+        else if(document.getElementById("CVBase2").checked) return '8';
+        else if(document.getElementById("CVBase3").checked) return '10';
+        else if(document.getElementById("CVBase4").checked) return '16';
+        else return false;
     }
 
     </script>
