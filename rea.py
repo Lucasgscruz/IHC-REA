@@ -123,11 +123,34 @@ def verificaSimbolos(base, numero):
     print "Valido!"
     eel.autenticaSimbolos(True, base, numero)
 
+def passos(base, numero):
+    if(base == 2):
+        arqbin = open('rea_gui/binario','w')
+        expoente = 0
+        total = 0
+        arqbin.write("Número: "+numero+"<br>Base Origem: 2<br>Base Destino: 10<br><br>")
+        while(expoente < len(numero)):
+            arqbin.write(numero[-expoente+1]+' * '+'2^'+str(expoente)+' = '+str(int(numero[-expoente+1])*(2**expoente))+'<br>')
+            total += int(numero[-expoente+1])*(2**expoente)
+            expoente += 1
+        arqbin.write("Soma: "+str(total))
+
+
+
+    elif(base is '10'):
+        pass
+    else:
+        print "Base não reconhecida!"
+    arqdec = open('rea_gui/decimal','w')
+
+
 @eel.expose
 def coverteBase(baseOrigem, numero):
     """Realiza conversao entre as bases numéricas"""
     baseOrigem = int(baseOrigem)
     numero = str(numero)
+    arq = open('rea_gui/binario','w').write('')
+    arq = open('rea_gui/decimal','w').write('')
 
     conversao = []
     if(numero[0] != '-'):
@@ -137,6 +160,7 @@ def coverteBase(baseOrigem, numero):
         conversao.append(str(numeroDecimal))
         conversao.append(hex(numeroDecimal)[2:].upper())
         eel.mudaTabela(conversao)
+        if(baseOrigem is '2' or '10'): passos(baseOrigem, numero)
     else:
         numeroDecimal = int(numero, baseOrigem)
         conversao.append('-' + bin(numeroDecimal)[3:])
@@ -172,4 +196,4 @@ def coverteBase(baseOrigem, numero):
 #         numero2 += aux2
 #
 #     return calcular(numero1, numero2, operacao)
-eel.start('calculadora.html', options = {'port': 9014})
+eel.start('calculadora.html', options = {'port': 9014, 'mode': 'chrome-app'})
