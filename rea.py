@@ -130,27 +130,29 @@ def passos(base, numero):
         total = 0
         arqbin.write("Número: "+numero+"<br>Base Origem: 2<br>Base Destino: 10<br><br>")
         while(expoente < len(numero)):
-            arqbin.write(numero[-expoente+1]+' * '+'2^'+str(expoente)+' = '+str(int(numero[-expoente+1])*(2**expoente))+'<br>')
-            total += int(numero[-expoente+1])*(2**expoente)
+            arqbin.write(numero[len(numero)-1-expoente]+' * '+'2^'+str(expoente)+' = '+str(int(numero[len(numero)-1-expoente])*(2**expoente))+'<br>')
+            total += int(numero[len(numero)-1-expoente])*(2**expoente)
             expoente += 1
         arqbin.write("Soma: "+str(total))
-
-
-
-    elif(base is '10'):
-        pass
+    elif(base == 10):
+        arqdec = open('rea_gui/decimal','w')
+        quociente = int(numero)
+        bits = []
+        arqdec.write("Número: "+numero+"<br>Base Origem: 10<br>Base Destino: 2<br><br>")
+        while(quociente >= 1):
+            arqdec.write(str(quociente)+'/2 = '+str(quociente/2)+' resto: '+str(quociente%2)+'<br>')
+            bits.append(quociente%2)
+            quociente = quociente/2
+        bits = str(bits).strip('[]').replace(',','').replace(' ','')
+        arqdec.write("Valor convertido: "+bits[::-1])
     else:
         print "Base não reconhecida!"
-    arqdec = open('rea_gui/decimal','w')
-
 
 @eel.expose
 def coverteBase(baseOrigem, numero):
     """Realiza conversao entre as bases numéricas"""
     baseOrigem = int(baseOrigem)
     numero = str(numero)
-    arq = open('rea_gui/binario','w').write('')
-    arq = open('rea_gui/decimal','w').write('')
 
     conversao = []
     if(numero[0] != '-'):

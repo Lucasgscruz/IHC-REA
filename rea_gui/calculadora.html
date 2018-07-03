@@ -85,7 +85,7 @@
                             <div class="card-content valign center">
                                 <h4>Conversão para Binário</h4>
                                 <!-- <img src="images/DecToBin.png"> -->
-                                <iframe id="passos" src="binario" frameborder="0" scrolling="yes" height="250" width="400"></iframe>
+                                <iframe id="passos" src="decimal" frameborder="0" scrolling="yes" height="250" width="400"></iframe>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@
                             <div class="card-content valign center">
                                 <h4>Conversão para Decimal</h4>
                                 <!-- <img src="images/DecToBin.png"> -->
-                                <iframe src="decimal" frameborder="0" scrolling="yes" height="250" width="400"></iframe>
+                                <iframe id="passosDec" src="binario" frameborder="0" scrolling="yes" height="250" width="400"></iframe>
                             </div>
                         </div>
 
@@ -294,7 +294,8 @@
         $("#celula_octal").html(lista[1]);
         $("#celula_decimal").html(lista[2]);
         $("#celula_hexa").html(lista[3]);
-        $("#passos").attr("src", "binario");
+        $("#passos").attr("src", "decimal");
+        $("#passosDec").attr("src", "binario");
     }
 
     function verificaParcelas(){
