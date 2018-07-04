@@ -1,4 +1,4 @@
-# Jogo de Truco em rede
+# Calculadora de Conversão & Operações numéricas
 Projeto apresentado ao curso de Ciência da Computação, da
 Universidade Federal de São João del Rei, como requisito parcial 
 para obtenção da nota final da disciplina de Interação Humano Computador.
