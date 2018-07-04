@@ -5,13 +5,13 @@ para obtenção da nota final da disciplina de Interação Humano-Computador.
 
 Para o bom funcionamento deste projeto, recomendamos que o mesmo seja executado em ambiente Linux, bem como que suas dependências estejam instaladas no sistema. 
 As dependências são: 
-- biblioteca "eel" : Pode ser instalada por meio do gerenciador de pacotes "pip", através do comando:
+- Biblioteca "eel" : Pode ser instalada por meio do gerenciador de pacotes "pip", através do comando:
 
-      sudo pip install eel
+	sudo pip install eel
  
-Caso não tenha o gerenciador "pip" instalado, o mesmo pode ser obtido digitando-se o comando:
+- Caso não tenha o gerenciador "pip" instalado, o mesmo pode ser obtido digitando-se o comando:
 
-      sudo apt-get install pip
+    sudo apt-get install pip
 
 ## Executando
 Para executar o programa, basta abrir a pasta raiz do projeto pelo terminal e executar o comando:
