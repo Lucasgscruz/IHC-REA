@@ -14,7 +14,7 @@ As dependências são:
       sudo apt-get install pip
 
 ## Executando
-Para executar o programa, basta abrir a pasta raiz do projeto pelo terminal e executar o comando:
+- Para executar o programa, basta abrir a pasta raiz do projeto pelo terminal e executar o comando:
 
       python rea.py
       
