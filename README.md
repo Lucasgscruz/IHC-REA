@@ -1,10 +1,10 @@
-# Calculadora de Conversão & Operações numéricas
+# Calculadora de Conversão & Operações Numéricas
 Projeto apresentado ao curso de Ciência da Computação, da
 Universidade Federal de São João del Rei, como requisito parcial 
-para obtenção da nota final da disciplina de Interação Humano Computador.
+para obtenção da nota final da disciplina de Interação Humano-Computador.
 
-Para o bom funcionamento deste projeto, recomendamos que o mesmo seja executado em ambiente linux, bem como que suas dependências estejam instaladas no sistema. 
-Sendo elas: 
+Para o bom funcionamento deste projeto, recomendamos que o mesmo seja executado em ambiente Linux, bem como que suas dependências estejam instaladas no sistema. 
+As dependências são: 
 - biblioteca "eel" : Pode ser instalada por meio do gerenciador de pacotes "pip", através do comando:
 
       sudo pip install eel
@@ -14,7 +14,7 @@ Caso não tenha o gerenciador "pip" instalado, o mesmo pode ser obtido digitando
       sudo apt-get install pip
 
 ## Executando
-Para executar o programa basta abrir a pasta raiz do projeto pelo terminal e executar o comando:
+Para executar o programa, basta abrir a pasta raiz do projeto pelo terminal e executar o comando:
 
       python rea.py
       
