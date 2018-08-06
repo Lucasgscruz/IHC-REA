@@ -1,0 +1,119 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-size: 25px;
+}
+
+.row {
+    box-shadow:
+}
+
+.calculator-buttons {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.button {
+    line-height: 75px;
+    width: 75px;
+    height: 75px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.small-container {
+    height: 25%;
+}
+
+.float-left {
+    float: left;
+    width: 75%;
+}
+
+.float-right {
+    float: right;
+}
+
+.bottom-container {
+    height: 100%;
+    width: 75%;
+}
+
+.bottom-container > div {
+    height: 75px;
+    float: left;
+    width: 33.3%;
+}
+
+#equal {
+    height: 150px;
+    width: 25%;
+    line-height: 150px;
+}
+
+.zero-sign {
+    width: 66.66% !important;
+}
+
+.display {
+    overflow: hidden;
+    height: 75px;
+    line-height: 75px;
+    margin-top: 20px;
+}
+
+html {
+    background-color: #B9F6CA;
+}
+
+.default-primary-color {
+    background: #0288D1;
+}
+
+.dark-primary-color {
+    background: #03A9F4;
+}
+
+.light-primary-color {
+    background: #B3E5FC;
+}
+
+.text-primary-color {
+    color: #FFFFFF;
+}
+
+.accent-color {
+    background: #fb7676;
+}
+
+.primary-text-color {
+    color: #212121;
+}
+
+.secondary-text-color {
+    color: #757575;
+}
+
+.divider-color {
+    border-color: #BDBDBD;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.shadow {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}

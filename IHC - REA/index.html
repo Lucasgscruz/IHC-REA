@@ -1,0 +1,130 @@
+<head>
+  <!--core first + styles last-->
+  <link href="/static/fontawesome/fontawesome-all.css" rel="stylesheet">
+</head>
+<body>
+  <!--user icon in two different styles-->
+  <i class="fas fa-user"></i>
+  <i class="far fa-user"></i>
+  <!--brand icon-->
+  <i class="fab fa-github-square"></i>
+</body>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>CalConvert</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link href="/static/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel = "stylesheet"  href = "css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    </head>
+    <body class = "container">
+        <div class="card-content valign center">
+            <h4>Calculadora de Conversão <br>& Operações Numéricas</h4>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <p>O objetivo desta ferramenta é propor ao aluno uma forma de acompanhar
+                a resolução de seus exercícios de conversão de bases.</p>
+            </div>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab active"><a href="#test5">Conversão</a></li>
+                    <li class="tab"><a href="#test4">Operações</a></li>
+                </ul>
+            </div>
+            <div class="card-content grey lighten-4">
+                <div id="test5"> <!-- CONVERSAO -->
+                    <div class="card-content valign center">
+                        <h5>Selecione a base de operação:</h5>
+                    </div>
+                    
+                    <br>
+                    <div class="intro-text">
+                        <form action="#">
+                            <p class="center-align">
+                                <input type="radio" name="base" id="base1"/>
+                                <label for="base1">Binário</label>
+                                <input type="radio" name="base" id="base2"/>
+                                <label for="base2">Octal</label>
+                                <input type="radio" name="base" id="base3"/>
+                                <label for="base3">Decimal</label>
+                                <input type="radio" name="base" id="base4"/>
+                                <label for="base4">Hexadecimal</label>
+                            </p>
+                      </form>
+                    </div>
+    
+                    <br>
+
+                    <div class="card-content valign center">
+                        <h5>Insira as parcelas:</h5>
+                    </div>
+                    <p>Caixa de Inserção de valores (Escolher entre dois valores ou uma expressão)</p>
+                    
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input placeholder="Valor 1" id="Valor1" type="text" class="validate"
+                                    maxlength="10">
+                                </div>
+                                <div class="input-field col s3">
+                                    <input placeholder="Valor 2" id="Valor2" type="text" class="validate" maxlength="10">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                        
+                    <!--user icon in two different styles-->
+                    <i class="fas fa-user"></i>
+                    <i class="far fa-user"></i>
+                    <!--brand icon-->
+                    <i class="fab fa-github-square"></i>
+
+                    <div class="card-content valign center">
+                        <h5>Selecione o operador:</h5>
+                    </div>
+                    
+                    <div class="card-content valign center">
+                        <!--<a id="operator" class="waves-effect waves-teal btn-flat material-icons">add</a> -->
+                        <span id="multiple" class="waves-effect waves-teal btn-flat">*</span>
+                        <span id="minus" class="waves-effect waves-teal btn-flat">-</span>
+                        <span id="plus" class="waves-effect waves-teal btn-flat">+</span>
+                        <span id="divide" class="waves-effect waves-teal btn-flat">/</span>
+                    </div>
+                    
+                    <p>Botões ligados com +, -, *, / (Optar por um menu circular)</p>
+                    <p>Botão CALCULAR</p>
+
+                    <div class="card-panel valign center">
+                        <button class="waves-effect waves-light btn">CALCULAR</button></td>
+                    </div>
+                    <p>Caixa com a SAÍDA</p>
+                </div>
+            
+                <div id="test4"> <!-- OPERAÇÕES -->
+                    <div>Operações</div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var instance = M.Tabs.init(el, options);    
+            $(document).ready(function(){
+                $('.tabs').tabs();
+            });
+        </script>
+         <script type = "text/javascript"
+            src = "js/jquery.min.js">
+            </script>
+
+        <script src = "js/materialize.min.js">
+        </script>
+       
+
+    </body>
+</html>
