@@ -8,10 +8,10 @@ As dependências são:
 - Navegador Web Google Chrome:
 
 	Para baixar o Chrome utilizando wget:
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	
 	Para instalar o Chrome:
-	sudo dpkg -i google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 - Biblioteca "eel" : Pode ser instalada por meio do gerenciador de pacotes "pip", através do comando:
 
