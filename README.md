@@ -23,6 +23,10 @@ Para instalar o Chrome:
 
       sudo apt-get install pip
 
+- Se a mensagem "Command python setup.py egg_info failed with error code 1 in /tmp/pip-build-L9J5Wu/eel/" for exibida na tela, isso significa que a sua SetupTools está desatualizada. Insira o comando abaixo para resolver o problema:
+
+      pip install --upgrade setuptools
+
 ## Executando
 - Para executar o programa, basta abrir a pasta raiz do projeto pelo terminal e executar o comando:
 
